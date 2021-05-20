@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./node_modules/lightpick/css/lightpick.css">
+    <link rel="stylesheet" type="" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" class="search-form">
+            <div class="place">
+                <label for="place-input" class="place__label">Место или название отеля</label>
+                <div class="place__wrapper">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt"
+                        class="svg-inline--fa fa-map-marker-alt fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <path fill="#feaf38"
+                            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+                        </path>
+                    </svg>
+                    <input class="place__input" type="text" name="place-input" id="place-input"
+                        placeholder="Введите здесь место">
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="period">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar-alt"
+                    class="svg-inline--fa fa-calendar-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512">
+                    <path fill="#feaf38"
+                        d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+                    </path>
+                </svg>
+                <div class="date-wrapper">
+                    <div class="labels-wrapper">
+                        <div class="period__label start-date__label">Заезд</div>
+                        <div class="period__label end-date__label">Выезд</div>
+                    </div>
+                    <input type="text" id="datepicker" />
+                    <button class="calendarBtn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
+                            class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path fill="#6b6b6b"
+                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="date-input__cover">
+                    <div class="start-date-display">начало</div>
+                    <div class="dot"></div>
+                    <div class="end-date-display">конец</div>
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="selects">
+                <div class="select-wrapper rooms-wrapper">
+                    <label for="rooms">Номера</label>
+                    <div class="select-wrapper__inner rooms-wrapper__inner">
+                        <input class="input" type="text" name="rooms" id="rooms" value="0" disabled>
+                        <div class="controls">
+                            <button class='btn-up select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up"
+                                    class="svg-btn-up svg-inline--fa fa-caret-up fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#feaf38"
+                                        d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button class='btn-down select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
+                                    class="svg-btn-down svg-inline--fa fa-caret-down fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#6b6b6b"
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="select-wrapper adults-wrapper">
+                    <label for="adults">Взрослые</label>
+                    <div class="select-wrapper__inner adults-wrapper__inner">
+                        <input class="input" type="text" name="adults" id="adults" value="0" disabled>
+                        <div class="controls">
+                            <button class='btn-up select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up"
+                                    class="svg-btn-up svg-inline--fa fa-caret-up fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#feaf38"
+                                        d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button class='btn-down select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
+                                    class="svg-btn-down svg-inline--fa fa-caret-down fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#6b6b6b"
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="select-wrapper kids-wrapper">
+                    <label for="kids">Дети</label>
+                    <div class="select-wrapper__inner kids-wrapper__inner">
+                        <input class="input" type="kids" name="kids" id="kids" value="0" disabled>
+                        <div class="controls">
+                            <button class='btn-up select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up"
+                                    class=" svg-btn-up svg-inline--fa fa-caret-up fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#feaf38"
+                                        d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button class='btn-down select-btn'>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
+                                    class="svg-btn-down svg-inline--fa fa-caret-down fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#6b6b6b"
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="add-btn">+</button>
+                <button class="findBtn">Найти</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./node_modules/moment/min/moment.min.js"></script>
+    <script src="./node_modules/lightpick/lightpick.js"></script>
+    <script>
+        var picker = new Lightpick({
+            field: document.getElementById('datepicker'),
+            singleDate: false,
+            onSelect: function (start, end) {
+                var str = '';
+                str += start ? start.format('Do MMMM ') + '     to    ' : '';
+                str += end ? end.format('Do MMMM ') : '...';
+                document.getElementById('datepicker').innerHTML = str;
+
+                let startDate = new Date(picker.getStartDate()._i).toLocaleDateString('ru', { day: 'numeric', month: 'long' })
+                document.querySelector('.start-date-display').textContent = startDate
+                let endDate = new Date(picker.getEndDate()._i).toLocaleDateString('ru', { day: 'numeric', month: 'long' })
+                document.querySelector('.end-date-display').textContent = endDate
+            }
+        });
+    </script>
+
+</body>
+
+</html>
