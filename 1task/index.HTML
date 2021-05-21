@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./node_modules/lightpick/css/lightpick.css">
-    <link rel="stylesheet" type="" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 
 <body>
@@ -117,7 +117,7 @@
                 <div class="select-wrapper kids-wrapper">
                     <label for="kids">Дети</label>
                     <div class="select-wrapper__inner kids-wrapper__inner">
-                        <input class="input" type="kids" name="kids" id="kids" value="0" disabled>
+                        <input class="input" type="text" name="kids" id="kids" value="0" disabled>
                         <div class="controls">
                             <button class='btn-up select-btn'>
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up"
@@ -147,7 +147,7 @@
             </div>
         </form>
     </div>
-    </div>
+    
     <script src="./js/main.js"></script>
     <script src="./node_modules/moment/min/moment.min.js"></script>
     <script src="./node_modules/lightpick/lightpick.js"></script>
@@ -157,14 +157,16 @@
             singleDate: false,
             onSelect: function (start, end) {
                 var str = '';
-                str += start ? start.format('Do MMMM ') + '     to    ' : '';
+                str += start ? start.format('Do MMMM ') + 'to' : '';
                 str += end ? end.format('Do MMMM ') : '...';
                 document.getElementById('datepicker').innerHTML = str;
 
                 let startDate = new Date(picker.getStartDate()._i).toLocaleDateString('ru', { day: 'numeric', month: 'long' })
                 document.querySelector('.start-date-display').textContent = startDate
-                let endDate = new Date(picker.getEndDate()._i).toLocaleDateString('ru', { day: 'numeric', month: 'long' })
-                document.querySelector('.end-date-display').textContent = endDate
+                if(picker.getEndDate()) {
+                    let endDate = new Date(picker.getEndDate()._i).toLocaleDateString('ru', { day: 'numeric', month: 'long' })
+                    document.querySelector('.end-date-display').textContent = endDate
+                }
             }
         });
     </script>

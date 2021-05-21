@@ -151,10 +151,16 @@ body{
     margin-left: -30px;
 }
 
+.start-date-display, 
+.end-date-display {
+    color: #383838;
+}
+
 .date-input__cover{
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    flex-flow: row nowrap;   
+    padding: 0 40px 0 10px;
+    justify-content: space-between;
     position: absolute;
     top: 50%;
     left:0%;
@@ -180,7 +186,7 @@ body{
     position: absolute;
     z-index: 1;
     right: -20px;
-    top: 54%;
+    top: 60%;
     width: 15px;
     height: 15px;
     background-color: transparent;
@@ -193,7 +199,7 @@ body{
 
 
 .fa-chevron-down{
-    height: 9px;
+    height: 12px;
 }
 
 .selects{

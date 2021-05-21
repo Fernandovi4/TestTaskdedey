@@ -1,17 +1,16 @@
+let resultQuantity = {
+    rooms: 0,
+    adults: 0,
+    kids: 0
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    getQuantity()
+    initCountQuantity()
 })
 
 
-function getQuantity() {
-
+function initCountQuantity() {
     let selects = document.querySelector('.selects')
-    let input
-
-    let result = {
-        quantity: 0,
-        type: ''
-    }
 
     selects.addEventListener('click', function (e) {
         let svg
@@ -24,39 +23,30 @@ function getQuantity() {
             svg = e.target
         }
 
-        if (svg.className.baseVal.includes('svg-btn-up')) {
-
-            let parent1 = e.target.closest('button')
-            let parent = parent1.closest('div')
-
-            input = parent.previousElementSibling
-            input.value++
-            result.quantity = input.value
-            result.type = input.id
-
-            return result
-        }
-
-        if (svg.className.baseVal.includes('svg-btn-down')) {
-
-            let parent1 = e.target.closest('button')
-            let parent = parent1.closest('div')
-
-            input = parent.previousElementSibling
-            if (input.value > 0) {
-                input.value--
-            }
-
-            result.quantity = input.value
-            result.type = input.id
-
-            return result
-        } 
+        svg && updateQuantity(svg, e)        
     })
 
 }
 
+function updateQuantity(svg, e) {
+    let parent = e.target.closest('.select-wrapper__inner')
+    let input = parent.getElementsByTagName('input')[0] 
+
+    if (svg.className.baseVal.includes('svg-btn-up')) {
+        input.value++
+        resultQuantity[input.id] = input.value
+    }
+
+    if (svg.className.baseVal.includes('svg-btn-down')) {        
+        if (input.value > 0) {
+            input.value--
+        }
+
+        resultQuantity[input.id] = input.value
+    } 
+}
+
 document.querySelector('.calendarBtn').addEventListener('click', function () {
-    picker.show()
+    window.picker.show()
 })
 

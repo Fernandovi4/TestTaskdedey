@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const _basicMessage = `Перетащите сюда файл <br> или нажмите, чтобы выбрать`
 let dropArea, dropAreaInput, invalidSizeClass = ''
 
-//object for passing options
+
 let options = {
     maxSizeMb: 1,
     artributes: ``
